@@ -476,7 +476,7 @@ module Generators
         end
 
         def remove_foreign_key(old_table_name, fk_name)
-          "remove_foreign_key('#{old_table_name}', '#{fk_name}')"
+          "remove_foreign_key('#{old_table_name}', name: '#{fk_name}')"
         end
 
         def format_options(options, type, changing=false)
