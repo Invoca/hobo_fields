@@ -19,7 +19,7 @@ module HoboFields
         self.unique = options.delete(:unique) || name == PRIMARY_KEY_NAME || false
 
         if self.name.length > MYSQL_INDEX_NAME_MAX_LENGTH
-          raise IndexNameTooLongError, "index name cannot exceed #{MYSQL_INDEX_NAME_MAX_LENGTH} characters"
+          raise IndexNameTooLongError, "Index '#{self.name}' exceeds MySQL limit of #{MYSQL_INDEX_NAME_MAX_LENGTH} characters. Give it a shorter name."
         end
 
         if options[:where]
